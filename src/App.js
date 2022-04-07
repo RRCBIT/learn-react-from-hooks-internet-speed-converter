@@ -25,10 +25,32 @@ function App() {
       <div className="card-header">Network Speed Converter</div>
       <div className="card-body">
         <UnitControl />
-        <UnitConverter
-          inputValue={inputValue}
-          handleInputChange={handleInputChange}
-        />
+        <div className="converter">
+          <div className="flex-1">
+            <div className="converter-title">Set</div>
+            {/* STEP 4: 把事件處理器綁定進去，並且把 value 帶入 */}
+            <input
+              type="number"
+              onChange={handleInputChange}
+              value={inputValue}
+              className="input-number"
+              min="0"
+            />
+          </div>
+          <span className="angle-icon fa-2x" style={{ marginTop: 30 }}>
+            <i className="fas fa-angle-right"></i>
+          </span>
+          <div className="text-right flex-1">
+            <div className="converter-title">Show</div>
+            {/* STEP 5: 把使用者輸入的值顯示於畫面上 */}
+            <input
+              type="text"
+              className="input-number text-right"
+              disabled
+              value={inputValue / 8}
+            />
+          </div>
+        </div>
       </div>
       <CardFooter inputValue={inputValue} />
     </div>
