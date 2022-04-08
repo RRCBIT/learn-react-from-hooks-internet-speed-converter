@@ -36,16 +36,32 @@ function TodoForm({ addTodo }) {
 
 // ...
 function App() {
-
-  const [todos, setTodos] = React.useState([
+const [todos, setTodos] = React.useState([
+    {
+      text: "Learn about React",
+      isCompleted: false
+    },
+    {
+      text: "Meet friend for lunch",
+      isCompleted: false
+    },
+    {
+      text: "Build really cool todo app",
+      isCompleted: false
+    }
+  ]);
+ {/*const [todos, setTodos] = React.useState([
     { text: "Learn about React" },
     { text: "Build really cool todo app" }
-  ]);
+  ]); */} 
+ 
 
- const addTodo = text => {
+const addTodo = text => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
   };
+
+
   return (
     <div className="app">
       <div className="todo-list">
