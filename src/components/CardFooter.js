@@ -2,7 +2,7 @@ import React from 'react';
 
 const CardFooter = (props) => {
   const { inputValue } = props;
-
+console.log(props);
   let criteria = {};
 
   if (!inputValue) {

@@ -1,36 +1,32 @@
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import React, { useState } from 'react';
-
-import CardFooter from './components/CardFooter';
-import UnitControl from './components/UnitControl';
-import UnitConverter from './components/UnitConverter';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-library.add(fab, fas, far);
+function Todo({ todo }) {
+  return (
+    <div className="todo">
+      {todo.text}
+    </div>
+  );
+};
 
 function App() {
-  const [inputValue, setInputValue] = useState(0);
-
-  const handleInputChange = (e) => {
-    const { value } = e.target;
-    setInputValue(value);
-  };
+  const [todos, setTodos] = React.useState([
+    { text: "Learn about React" },
+    { text: "Meet friend for lunch" },
+    { text: "Build really cool todo app" }
+  ]);
 
   return (
-    <div className="container">
-      <div className="card-header">Network Speed Converter</div>
-      <div className="card-body">
-        <UnitControl />
-        <UnitConverter
-          inputValue={inputValue}
-          handleInputChange={handleInputChange}
-        />
+    <div className="app">
+      <div className="todo-list">
+        {todos.map((todo, index) => (
+          <Todo
+            key={index}
+            index={index}
+            todo={todo}
+          />
+        ))}
       </div>
-      <CardFooter inputValue={inputValue} />
     </div>
   );
 }
