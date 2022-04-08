@@ -25,7 +25,10 @@ function App() {
       <div className="card-header">Network Speed Converter</div>
       <div className="card-body">
         <UnitControl />
-
+        <UnitConverter
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+        />
         <div className="converter">
 
           <div className="flex-1">
@@ -54,7 +57,7 @@ function App() {
             />
           </div>{/*righg*/}
         </div>  {/* STEP 5: converter end */}
-
+       
       </div>
       <CardFooter inputValue={inputValue} />
     </div>
