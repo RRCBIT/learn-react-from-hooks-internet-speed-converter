@@ -33,7 +33,7 @@ function App() {
 
           <div className="flex-1">
             <div className="converter-title">Set</div>
-            {/* STEP 4: 把事件處理器綁定進去，並且把 value 帶入 */}
+            {/* Origin Start STEP 4: 把事件處理器綁定進去，並且把 value 帶入 */}
             <input
               type="number"
               onChange={handleInputChange}
